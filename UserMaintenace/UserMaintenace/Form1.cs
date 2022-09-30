@@ -23,6 +23,7 @@ namespace UserMaintenace
           
             btnAdd.Text = Resource1.Add; // button1
             btnWrite.Text = Resource1.Write;
+            btnDelete.Text = Resource1.Delete;
 
             listUsers.DataSource = users;
             listUsers.ValueMember = "ID";
@@ -62,6 +63,15 @@ namespace UserMaintenace
                 }
                 sw.Close();
             }
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            //int torlendo = (int)listUsers.SelectedValue;
+            User torl = (User)listUsers.SelectedItem;
+            users.Remove(torl);
+           
+
         }
     }
 }
