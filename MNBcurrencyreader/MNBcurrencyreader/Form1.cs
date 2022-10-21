@@ -17,9 +17,23 @@ namespace MNBcurrencyreader
     public partial class Form1 : Form
     {
         BindingList<RateData> Rates = new BindingList<RateData>();
+        BindingList<string> Currencies = new BindingList<string>();
+        
+
         public Form1()
         {
             InitializeComponent();
+            /*comboBox1.DataSource = Currencies;
+            var mnbService = new MNBArfolyamServiceSoapClient();
+
+            var request = new GetCurrenciesRequest()
+            { GetCurrencies = "123,12" };
+            var response = mnbService.GetCurrencies(request)
+
+            var result = response.GetCurrenciesResult;*/
+
+
+
 
             RefreshData();
             

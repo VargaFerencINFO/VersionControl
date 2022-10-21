@@ -945,5 +945,10 @@ namespace MNBcurrencyreader.MnbServiceReference {
             inValue.GetInfo = GetInfo;
             return ((MNBcurrencyreader.MnbServiceReference.MNBArfolyamServiceSoap)(this)).GetInfoAsync(inValue);
         }
+
+        internal object GetCurrencies(GetCurrenciesRequest request)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
