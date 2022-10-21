@@ -20,29 +20,37 @@ namespace MNBcurrencyreader
         public Form1()
         {
             InitializeComponent();
+
+            RefreshData();
             
+            
+        }
+        private void RefreshData()
+        {
+            Rates.Clear();
+            dataGridView1.DataSource = Rates;
+
+
             var mnbService = new MNBArfolyamServiceSoapClient();
 
             var request = new GetExchangeRatesRequestBody()
             {
-                currencyNames = "EUR",
-                startDate = "2020-01-01",
-                endDate = "2020-06-30"
+                currencyNames = comboBox1.SelectedItem.ToString(),
+                startDate = dateTimePicker1.Value.ToString("yyy-MM-dd"),
+                endDate = dateTimePicker2.Value.ToString("yyy-MM-dd")
             };
 
             var response = mnbService.GetExchangeRates(request);
 
             var result = response.GetExchangeRatesResult;
 
-            Rates.Clear();
-            dataGridView1.DataSource = Rates;
-
+            
             var xml = new XmlDocument();
             xml.LoadXml(result);
 
             foreach (XmlElement element in xml.DocumentElement)
             {
-                
+
                 var rate = new RateData();
                 Rates.Add(rate);
 
@@ -82,6 +90,11 @@ namespace MNBcurrencyreader
         private void Form1_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+            RefreshData();
         }
     }
 }
