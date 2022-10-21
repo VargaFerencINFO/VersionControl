@@ -30,10 +30,8 @@ namespace MNBcurrencyreader
             { GetCurrencies = "123,12" };
             var response = mnbService.GetCurrencies(request)
 
-            var result = response.GetCurrenciesResult;*/
-
-
-
+            var result = response.GetCurrenciesResult;
+            Nem értem itt mi van*/
 
             RefreshData();
             
