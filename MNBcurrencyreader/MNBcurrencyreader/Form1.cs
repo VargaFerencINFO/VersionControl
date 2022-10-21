@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.DataVisualization.Charting;
 using System.Xml;
 
 namespace MNBcurrencyreader
@@ -56,10 +57,27 @@ namespace MNBcurrencyreader
                 if (unit != 0)
                     rate.Value = value / unit;
             }
-            
+            Charting();
         }
 
-        
+        private void Charting()
+        {
+            chartRateData.DataSource = Rates;
+
+            var series = chartRateData.Series[0];
+            series.ChartType = SeriesChartType.Line;
+            series.XValueMember = "Date";
+            series.YValueMembers = "Value";
+            series.BorderWidth = 2;
+
+            var legend = chartRateData.Legends[0];
+            legend.Enabled = false;
+
+            var chartArea = chartRateData.ChartAreas[0];
+            chartArea.AxisX.MajorGrid.Enabled = false;
+            chartArea.AxisY.MajorGrid.Enabled = false;
+            chartArea.AxisY.IsStartedFromZero = false;
+        }
 
         private void Form1_Load(object sender, EventArgs e)
         {
