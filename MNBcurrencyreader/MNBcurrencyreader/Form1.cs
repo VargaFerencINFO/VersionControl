@@ -31,7 +31,7 @@ namespace MNBcurrencyreader
             var response = mnbService.GetCurrencies(request)
 
             var result = response.GetCurrenciesResult;
-            Nem értem itt mi van*/
+            Nem értem itt mi van...*/
 
             RefreshData();
             
