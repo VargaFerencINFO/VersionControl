@@ -1,4 +1,5 @@
-﻿using MNBcurrencyreader.MnbServiceReference;
+﻿using MNBcurrencyreader.Entities;
+using MNBcurrencyreader.MnbServiceReference;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,6 +14,7 @@ namespace MNBcurrencyreader
 {
     public partial class Form1 : Form
     {
+        BindingList<RateData> Rates = new BindingList<RateData>();
         public Form1()
         {
             InitializeComponent();
@@ -29,6 +31,9 @@ namespace MNBcurrencyreader
             var response = mnbService.GetExchangeRates(request);
 
             var result = response.GetExchangeRatesResult;
+
+            Rates.Clear();
+            dataGridView1.DataSource = Rates;
         }
 
         private void Form1_Load(object sender, EventArgs e)
