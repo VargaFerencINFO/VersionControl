@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Fejlesztesi_Mintak.Entities
 {
-    internal class CarFactory : IToyFactory
+    public class CarFactory : IToyFactory
     {
         public Toy CreateNew()
         {
