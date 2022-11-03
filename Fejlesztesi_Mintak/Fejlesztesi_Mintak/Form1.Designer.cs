@@ -104,7 +104,7 @@
             this.btnColor.Name = "btnColor";
             this.btnColor.Size = new System.Drawing.Size(50, 50);
             this.btnColor.TabIndex = 3;
-            this.btnColor.Text = "button1";
+            this.btnColor.Text = "Ball";
             this.btnColor.UseVisualStyleBackColor = false;
             this.btnColor.Click += new System.EventHandler(this.btnColor_Click);
             // 
@@ -125,7 +125,7 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(50, 50);
             this.button1.TabIndex = 5;
-            this.button1.Text = "button1";
+            this.button1.Text = "Ribbon";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.btnColor_Click);
             // 
@@ -136,7 +136,7 @@
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(50, 50);
             this.button2.TabIndex = 6;
-            this.button2.Text = "button2";
+            this.button2.Text = "Box";
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.btnColor_Click);
             // 

@@ -15,7 +15,7 @@ namespace Fejlesztesi_Mintak.Entities
 
         public Toy CreateNew()
         {
-            return new Present(ribbonColor);
+            return new Present(ribbonColor,boxColor);
         }
     }
 }
