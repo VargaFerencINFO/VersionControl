@@ -101,5 +101,14 @@ namespace Fejlesztesi_Mintak
                 return;
             button.BackColor = colorPicker.Color;
         }
+
+        private void btnSelectPresent_Click(object sender, EventArgs e)
+        {
+            Factory = new PresentFactory()
+            {
+                ribbonColor = button1.BackColor,
+                boxColor = button2.BackColor
+            };
+        }
     }
 }
