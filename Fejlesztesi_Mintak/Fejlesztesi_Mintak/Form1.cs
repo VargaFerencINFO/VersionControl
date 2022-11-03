@@ -14,7 +14,7 @@ namespace Fejlesztesi_Mintak
 {
     public partial class Form1 : Form
     {
-        private List<Ball> _toys = new List<Ball>();
+        private List<Toy> _toys = new List<Toy>();
 
         private IToyFactory _factory;
 
@@ -27,7 +27,7 @@ namespace Fejlesztesi_Mintak
         public Form1()
         {
             InitializeComponent();
-            Factory = new BallFactory();
+            Factory = new CarFactory();
         }
 
         private void Form1_Load(object sender, EventArgs e)
