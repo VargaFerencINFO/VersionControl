@@ -86,8 +86,8 @@ namespace Fejlesztesi_Mintak
             if (_nextToy != null)
                 Controls.Remove(_nextToy);
             _nextToy = Factory.CreateNew();
-            _nextToy.Top = lblNext.Top + lblNext.Height + 20;
-            _nextToy.Left = lblNext.Left;
+            _nextToy.Top = labelNext.Top + labelNext.Height + 20;
+            _nextToy.Left = labelNext.Left;
             Controls.Add(_nextToy);
         }
 

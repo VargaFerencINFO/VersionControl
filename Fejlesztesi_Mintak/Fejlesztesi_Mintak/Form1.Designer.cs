@@ -34,7 +34,7 @@
             this.conveyorTimer = new System.Windows.Forms.Timer(this.components);
             this.btnSelectCar = new System.Windows.Forms.Button();
             this.btnSelectBall = new System.Windows.Forms.Button();
-            this.lblNext = new System.Windows.Forms.Label();
+            this.labelNext = new System.Windows.Forms.Label();
             this.btnColor = new System.Windows.Forms.Button();
             this.btnSelectPresent = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
@@ -48,7 +48,7 @@
             this.mainPanel.Controls.Add(this.button1);
             this.mainPanel.Controls.Add(this.btnSelectPresent);
             this.mainPanel.Controls.Add(this.btnColor);
-            this.mainPanel.Controls.Add(this.lblNext);
+            this.mainPanel.Controls.Add(this.labelNext);
             this.mainPanel.Controls.Add(this.btnSelectBall);
             this.mainPanel.Controls.Add(this.btnSelectCar);
             this.mainPanel.Location = new System.Drawing.Point(12, 12);
@@ -88,14 +88,14 @@
             this.btnSelectBall.UseVisualStyleBackColor = true;
             this.btnSelectBall.Click += new System.EventHandler(this.btnSelectBall_Click);
             // 
-            // lblNext
+            // labelNext
             // 
-            this.lblNext.AutoSize = true;
-            this.lblNext.Location = new System.Drawing.Point(257, 28);
-            this.lblNext.Name = "lblNext";
-            this.lblNext.Size = new System.Drawing.Size(70, 13);
-            this.lblNext.TabIndex = 2;
-            this.lblNext.Text = "Coming Next:";
+            this.labelNext.AutoSize = true;
+            this.labelNext.Location = new System.Drawing.Point(257, 28);
+            this.labelNext.Name = "labelNext";
+            this.labelNext.Size = new System.Drawing.Size(70, 13);
+            this.labelNext.TabIndex = 2;
+            this.labelNext.Text = "Coming Next:";
             // 
             // btnColor
             // 
@@ -160,7 +160,7 @@
         private System.Windows.Forms.Panel mainPanel;
         private System.Windows.Forms.Timer createTimer;
         private System.Windows.Forms.Timer conveyorTimer;
-        private System.Windows.Forms.Label lblNext;
+        private System.Windows.Forms.Label labelNext;
         private System.Windows.Forms.Button btnSelectBall;
         private System.Windows.Forms.Button btnSelectCar;
         private System.Windows.Forms.Button btnColor;
