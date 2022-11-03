@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Fejlesztesi_Mintak.Entities
 {
-    internal class BallFactory
+    public class BallFactory
     {
         public Ball CreateNew()
         {
