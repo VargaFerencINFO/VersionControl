@@ -27,6 +27,7 @@ namespace Fejlesztesi_Mintak
                 _factory = value;
                 DisplayNext();
                 }
+
         }
 
        
@@ -47,6 +48,7 @@ namespace Fejlesztesi_Mintak
             var toy = Factory.CreateNew();
             _toys.Add(toy);
             toy.Left = -toy.Width;
+            toy.Top = 250;
             mainPanel.Controls.Add(toy);
         }
 
@@ -88,7 +90,7 @@ namespace Fejlesztesi_Mintak
             _nextToy = Factory.CreateNew();
             _nextToy.Top = labelNext.Top + labelNext.Height + 20;
             _nextToy.Left = labelNext.Left;
-            Controls.Add(_nextToy);
+            mainPanel.Controls.Add(_nextToy);
         }
 
         private void btnColor_Click(object sender, EventArgs e)
@@ -109,6 +111,7 @@ namespace Fejlesztesi_Mintak
                 ribbonColor = button1.BackColor,
                 boxColor = button2.BackColor
             };
+            
         }
     }
 }
