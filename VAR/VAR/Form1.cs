@@ -88,6 +88,7 @@ namespace VAR
                     }
                 }
             }
+            MessageBox.Show("SIkeres mentes");
         }
     }
 }
