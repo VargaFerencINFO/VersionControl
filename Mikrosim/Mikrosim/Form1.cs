@@ -15,10 +15,11 @@ namespace Mikrosim
     public partial class Form1 : Form
     {
         List<Person> Population = new List<Person>();
+
         List<BirthProbability> BirthProbabilities = new List<BirthProbability>();
         List<DeathProbability> DeathProbabilities = new List<DeathProbability>();
-        List<int> Men = new List <int>();
-        List<int> Women = new List <int>();
+        List<string> Men = new List <string>();
+        List<string> Women = new List <string>();
         public int yearcount=0;
         Random rng = new Random(1234);
         
@@ -38,10 +39,10 @@ namespace Mikrosim
             Population = GetPopulation(textBox1.Text);
             BirthProbabilities = GetBirthProbabilities(@"C:\Temp\születés.csv");
             DeathProbabilities = GetDeathProbabilities(@"C:\Temp\halál.csv");
-
+           
             for (int year = 2005; year <= numericUpDown1.Value; year++)
             {
-                yearcount++;
+                
                 for (int i = 0; i < Population.Count; i++)
                 {
 
@@ -54,13 +55,17 @@ namespace Mikrosim
                 int nbrOfFemales = (from x in Population
                                     where x.Gender == Gender.Female && x.IsAlive
                                     select x).Count();
-                Men[yearcount] = nbrOfMales;
-                Women[yearcount] = nbrOfFemales;
 
+                yearcount++;
+
+                Men[yearcount] = nbrOfMales.ToString();
+                Women[yearcount] = nbrOfFemales.ToString();
+                yearcount++;
                 Console.WriteLine(
                     string.Format("Év:{0} Fiúk:{1} Lányok:{2}", year, nbrOfMales, nbrOfFemales));
 
             }
+            
 
         }
 
@@ -164,7 +169,11 @@ namespace Mikrosim
 
         private void DisplayResults()
         {
-            throw new NotImplementedException();
+            for (int i = 0; i <= yearcount; i++)
+            {
+                int recent_year = 2005 + i;
+                richTextBox1.AppendText("Szimulációs év: " + recent_year + Environment.NewLine + "/t Fiúk: " + Men[i] + Environment.NewLine + "/t Lányok: " + Women[i]+ Environment.NewLine);
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
