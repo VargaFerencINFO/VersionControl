@@ -55,7 +55,7 @@ namespace Mikrosim
                 while (!sr.EndOfStream)
                 {
                     var line = sr.ReadLine().Split(';');
-                    population.Add(new BirthProbability()
+                    birth_prob.Add(new BirthProbability()
                     {
                         Age = int.Parse(line[0]),
                         Children_nmb = int.Parse(line[1]),
@@ -64,7 +64,28 @@ namespace Mikrosim
                 }
             }
 
-            return population;
+            return birth_prob;
+        }
+
+        public List<DeathProbability> GetDeathProbabilities(string csvpath)
+        {
+            List<DeathProbability> death_prob = new List<DeathProbability>();
+
+            using (StreamReader sr = new StreamReader(csvpath, Encoding.Default))
+            {
+                while (!sr.EndOfStream)
+                {
+                    var line = sr.ReadLine().Split(';');
+                    death_prob.Add(new DeathProbability()
+                    {
+                        Gender = (Gender)Enum.Parse(typeof(Gender), line[0]),
+                        Age = int.Parse(line[1]),
+                        Death_Prob = double.Parse(line[2])
+                    });
+                }
+            }
+
+            return death_prob;
         }
 
     }
