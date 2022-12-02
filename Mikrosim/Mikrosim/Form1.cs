@@ -163,6 +163,7 @@ namespace Mikrosim
 
         private void start_btn_Click(object sender, EventArgs e)
         {
+            richTextBox1.Clear();
             Simulation();
             DisplayResults();
         }
