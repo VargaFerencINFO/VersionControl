@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace Mikrosim.Entities
 {
-    public class BirthProbability
+    public class DeathProbability
     {
+        public Gender Gender { get; set; }
         public int Age { get; set; }
-        public int Children_nmb { get; set; }
-        public double Prob { get; set; }
+        public double Death_Prob { get; set; }
     }
 }
