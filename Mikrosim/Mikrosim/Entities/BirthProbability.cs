@@ -10,6 +10,6 @@ namespace Mikrosim.Entities
     {
         public int Age { get; set; }
         public int Children_nmb { get; set; }
-        public double Birth_Prob { get; set; }
+        public double P { get; set; }
     }
 }

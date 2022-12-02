@@ -31,7 +31,7 @@ namespace Mikrosim
                 for (int i = 0; i < Population.Count; i++)
                 {
                     // Ide jön a szimulációs lépés
-                    SimStep(year,nbrofMales);
+                    SimStep(year, Population[i] );
                 }
 
                 int nbrOfMales = (from x in Population
@@ -115,7 +115,7 @@ namespace Mikrosim
                     {
                         Age = int.Parse(line[0]),
                         Children_nmb = int.Parse(line[1]),
-                        Birth_Prob = double.Parse(line[2])
+                        P = double.Parse(line[2])
                     });
                 }
             }
@@ -136,7 +136,7 @@ namespace Mikrosim
                     {
                         Gender = (Gender)Enum.Parse(typeof(Gender), line[0]),
                         Age = int.Parse(line[1]),
-                        Death_Prob = double.Parse(line[2])
+                        P = double.Parse(line[2])
                     });
                 }
             }
