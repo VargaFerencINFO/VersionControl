@@ -27,11 +27,12 @@ namespace Mikrosim
 
         private void Simulation()
         {
-            Population = GetPopulation(@"C:\Temp\nép-teszt.csv");
+            //Population = GetPopulation(@"C:\Temp\nép-teszt.csv");
+            Population = GetPopulation(textBox1.Text);
             BirthProbabilities = GetBirthProbabilities(@"C:\Temp\születés.csv");
             DeathProbabilities = GetDeathProbabilities(@"C:\Temp\halál.csv");
 
-            for (int year = 2005; year <= 2024; year++)
+            for (int year = 2005; year <= numericUpDown1.Value; year++)
             {
 
                 for (int i = 0; i < Population.Count; i++)
@@ -165,7 +166,7 @@ namespace Mikrosim
                 {
                   
                     filePath = openFileDialog.FileName;
-                  
+                    textBox1.Text = filePath;
                     var fileStream = openFileDialog.OpenFile();
 
                     using (StreamReader reader = new StreamReader(fileStream))
