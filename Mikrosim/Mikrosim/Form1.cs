@@ -17,11 +17,18 @@ namespace Mikrosim
         List<Person> Population = new List<Person>();
         List<BirthProbability> BirthProbabilities = new List<BirthProbability>();
         List<DeathProbability> DeathProbabilities = new List<DeathProbability>();
+        List<int> Men = new List <int>();
+        List<int> Women = new List <int>();
+        public int yearcount=0;
         Random rng = new Random(1234);
+        
         public Form1()
         {
             InitializeComponent();
-            
+            numericUpDown1.Minimum = 2005;
+            numericUpDown1.Maximum = 2030;
+            numericUpDown1.Value = 2024;
+
 
         }
 
@@ -34,7 +41,7 @@ namespace Mikrosim
 
             for (int year = 2005; year <= numericUpDown1.Value; year++)
             {
-
+                yearcount++;
                 for (int i = 0; i < Population.Count; i++)
                 {
 
@@ -47,10 +54,14 @@ namespace Mikrosim
                 int nbrOfFemales = (from x in Population
                                     where x.Gender == Gender.Female && x.IsAlive
                                     select x).Count();
+                Men[yearcount] = nbrOfMales;
+                Women[yearcount] = nbrOfFemales;
+
                 Console.WriteLine(
                     string.Format("Év:{0} Fiúk:{1} Lányok:{2}", year, nbrOfMales, nbrOfFemales));
 
             }
+
         }
 
         private void SimStep(int year, Person person)
@@ -148,6 +159,12 @@ namespace Mikrosim
         private void start_btn_Click(object sender, EventArgs e)
         {
             Simulation();
+            DisplayResults();
+        }
+
+        private void DisplayResults()
+        {
+            throw new NotImplementedException();
         }
 
         private void button1_Click(object sender, EventArgs e)
