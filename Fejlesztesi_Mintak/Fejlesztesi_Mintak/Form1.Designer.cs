@@ -30,15 +30,15 @@
         {
             this.components = new System.ComponentModel.Container();
             this.mainPanel = new System.Windows.Forms.Panel();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.btnSelectPresent = new System.Windows.Forms.Button();
+            this.btnColor = new System.Windows.Forms.Button();
+            this.labelNext = new System.Windows.Forms.Label();
+            this.btnSelectBall = new System.Windows.Forms.Button();
+            this.btnSelectCar = new System.Windows.Forms.Button();
             this.createTimer = new System.Windows.Forms.Timer(this.components);
             this.conveyorTimer = new System.Windows.Forms.Timer(this.components);
-            this.btnSelectCar = new System.Windows.Forms.Button();
-            this.btnSelectBall = new System.Windows.Forms.Button();
-            this.labelNext = new System.Windows.Forms.Label();
-            this.btnColor = new System.Windows.Forms.Button();
-            this.btnSelectPresent = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.mainPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -55,68 +55,18 @@
             this.mainPanel.Name = "mainPanel";
             this.mainPanel.Size = new System.Drawing.Size(776, 426);
             this.mainPanel.TabIndex = 0;
+            this.mainPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.mainPanel_Paint);
             // 
-            // createTimer
+            // button2
             // 
-            this.createTimer.Enabled = true;
-            this.createTimer.Interval = 3000;
-            this.createTimer.Tick += new System.EventHandler(this.createTimer_Tick);
-            // 
-            // conveyorTimer
-            // 
-            this.conveyorTimer.Enabled = true;
-            this.conveyorTimer.Interval = 10;
-            this.conveyorTimer.Tick += new System.EventHandler(this.conveyorTimer_Tick);
-            // 
-            // btnSelectCar
-            // 
-            this.btnSelectCar.Location = new System.Drawing.Point(32, 28);
-            this.btnSelectCar.Name = "btnSelectCar";
-            this.btnSelectCar.Size = new System.Drawing.Size(50, 50);
-            this.btnSelectCar.TabIndex = 0;
-            this.btnSelectCar.Text = "CAR";
-            this.btnSelectCar.UseVisualStyleBackColor = true;
-            this.btnSelectCar.Click += new System.EventHandler(this.btnSelectCar_Click);
-            // 
-            // btnSelectBall
-            // 
-            this.btnSelectBall.Location = new System.Drawing.Point(88, 28);
-            this.btnSelectBall.Name = "btnSelectBall";
-            this.btnSelectBall.Size = new System.Drawing.Size(50, 50);
-            this.btnSelectBall.TabIndex = 1;
-            this.btnSelectBall.Text = "BALL";
-            this.btnSelectBall.UseVisualStyleBackColor = true;
-            this.btnSelectBall.Click += new System.EventHandler(this.btnSelectBall_Click);
-            // 
-            // labelNext
-            // 
-            this.labelNext.AutoSize = true;
-            this.labelNext.Location = new System.Drawing.Point(257, 28);
-            this.labelNext.Name = "labelNext";
-            this.labelNext.Size = new System.Drawing.Size(70, 13);
-            this.labelNext.TabIndex = 2;
-            this.labelNext.Text = "Coming Next:";
-            // 
-            // btnColor
-            // 
-            this.btnColor.BackColor = System.Drawing.Color.Blue;
-            this.btnColor.Location = new System.Drawing.Point(88, 84);
-            this.btnColor.Name = "btnColor";
-            this.btnColor.Size = new System.Drawing.Size(50, 50);
-            this.btnColor.TabIndex = 3;
-            this.btnColor.Text = "Ball";
-            this.btnColor.UseVisualStyleBackColor = false;
-            this.btnColor.Click += new System.EventHandler(this.btnColor_Click);
-            // 
-            // btnSelectPresent
-            // 
-            this.btnSelectPresent.Location = new System.Drawing.Point(144, 28);
-            this.btnSelectPresent.Name = "btnSelectPresent";
-            this.btnSelectPresent.Size = new System.Drawing.Size(50, 50);
-            this.btnSelectPresent.TabIndex = 4;
-            this.btnSelectPresent.Text = "Present";
-            this.btnSelectPresent.UseVisualStyleBackColor = true;
-            this.btnSelectPresent.Click += new System.EventHandler(this.btnSelectPresent_Click);
+            this.button2.BackColor = System.Drawing.Color.Yellow;
+            this.button2.Location = new System.Drawing.Point(144, 140);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(50, 50);
+            this.button2.TabIndex = 6;
+            this.button2.Text = "Box";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.btnColor_Click);
             // 
             // button1
             // 
@@ -129,16 +79,67 @@
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.btnColor_Click);
             // 
-            // button2
+            // btnSelectPresent
             // 
-            this.button2.BackColor = System.Drawing.Color.Yellow;
-            this.button2.Location = new System.Drawing.Point(144, 140);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(50, 50);
-            this.button2.TabIndex = 6;
-            this.button2.Text = "Box";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.btnColor_Click);
+            this.btnSelectPresent.Location = new System.Drawing.Point(144, 28);
+            this.btnSelectPresent.Name = "btnSelectPresent";
+            this.btnSelectPresent.Size = new System.Drawing.Size(50, 50);
+            this.btnSelectPresent.TabIndex = 4;
+            this.btnSelectPresent.Text = "Present";
+            this.btnSelectPresent.UseVisualStyleBackColor = true;
+            this.btnSelectPresent.Click += new System.EventHandler(this.btnSelectPresent_Click);
+            // 
+            // btnColor
+            // 
+            this.btnColor.BackColor = System.Drawing.Color.Blue;
+            this.btnColor.Location = new System.Drawing.Point(88, 84);
+            this.btnColor.Name = "btnColor";
+            this.btnColor.Size = new System.Drawing.Size(50, 50);
+            this.btnColor.TabIndex = 3;
+            this.btnColor.Text = "Ball";
+            this.btnColor.UseVisualStyleBackColor = false;
+            this.btnColor.Click += new System.EventHandler(this.btnColor_Click);
+            // 
+            // labelNext
+            // 
+            this.labelNext.AutoSize = true;
+            this.labelNext.Location = new System.Drawing.Point(257, 28);
+            this.labelNext.Name = "labelNext";
+            this.labelNext.Size = new System.Drawing.Size(70, 13);
+            this.labelNext.TabIndex = 2;
+            this.labelNext.Text = "Coming Next:";
+            // 
+            // btnSelectBall
+            // 
+            this.btnSelectBall.Location = new System.Drawing.Point(88, 28);
+            this.btnSelectBall.Name = "btnSelectBall";
+            this.btnSelectBall.Size = new System.Drawing.Size(50, 50);
+            this.btnSelectBall.TabIndex = 1;
+            this.btnSelectBall.Text = "BALL";
+            this.btnSelectBall.UseVisualStyleBackColor = true;
+            this.btnSelectBall.Click += new System.EventHandler(this.btnSelectBall_Click);
+            // 
+            // btnSelectCar
+            // 
+            this.btnSelectCar.Location = new System.Drawing.Point(32, 28);
+            this.btnSelectCar.Name = "btnSelectCar";
+            this.btnSelectCar.Size = new System.Drawing.Size(50, 50);
+            this.btnSelectCar.TabIndex = 0;
+            this.btnSelectCar.Text = "CAR";
+            this.btnSelectCar.UseVisualStyleBackColor = true;
+            this.btnSelectCar.Click += new System.EventHandler(this.btnSelectCar_Click);
+            // 
+            // createTimer
+            // 
+            this.createTimer.Enabled = true;
+            this.createTimer.Interval = 3000;
+            this.createTimer.Tick += new System.EventHandler(this.createTimer_Tick);
+            // 
+            // conveyorTimer
+            // 
+            this.conveyorTimer.Enabled = true;
+            this.conveyorTimer.Interval = 10;
+            this.conveyorTimer.Tick += new System.EventHandler(this.conveyorTimer_Tick);
             // 
             // Form1
             // 

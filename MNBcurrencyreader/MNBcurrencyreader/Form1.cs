@@ -108,5 +108,10 @@ namespace MNBcurrencyreader
         {
             RefreshData();
         }
+
+        private void comboBox1_SelectedValueChanged(object sender, EventArgs e)
+        {
+            RefreshData();
+        }
     }
 }
